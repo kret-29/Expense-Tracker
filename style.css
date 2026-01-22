@@ -1,0 +1,155 @@
+:root {
+    --bg: #f4f6fb;
+    --card: rgba(255, 255, 255, 0.85);
+    --text: #1f2933;
+    --income: #22c55e;
+    --expense: #ef4444;
+    --accent: #6366f1;
+}
+
+body.dark {
+    background: linear-gradient(120deg,
+            #020617,
+            #1e1b4b,
+            #020617);
+    background-size: 300% 300%;
+    animation: gradientMove 18s ease infinite;
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg,
+            #f8d0e4,
+            /* pink */
+            #c4c8ef,
+            /* indigo */
+            #c2e3e9
+            /* cyan */
+        );
+    background-size: 300% 300%;
+    animation: gradientMove 14s ease infinite;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    transition: background 0.4s ease;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: var(--card);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px;
+    border-radius: 24px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15)
+}
+
+
+h1 {
+    text-align: center;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.summary div {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+#income {
+    color: var(--income);
+}
+
+#expenses {
+    color: var(--expense);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+}
+
+li span.amount.income {
+    color: var(--income);
+}
+
+li span.amount.expense {
+    color: var(--expense);
+}
+
+li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
