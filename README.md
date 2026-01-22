@@ -1,5 +1,5 @@
 # Expense-Tracker
-A modern, single-page expense tracker built with JavaScript and a bold neon UI.  
+A modern, single-page expense tracker. 
 Designed to demonstrate real-world logic, clean state management, and polished UI/UX — not tutorial vibes.
 
 # ✨ Features
