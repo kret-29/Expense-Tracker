@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker 💸</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <button id="themeToggle">🌙</button>
+
+    <main class="card">
+        <h1>Expense Tracker 💸</h1>
+
+        <!-- Month Filter -->
+        <select id="monthFilter"></select>
+
+        <!-- Summary -->
+        <section class="summary">
+            <div>
+                <h4>Income</h4>
+                <p id="income">$0</p>
+            </div>
+            <div>
+                <h4>Expenses</h4>
+                <p id="expenses">$0</p>
+            </div>
+            <div>
+                <h4>Balance</h4>
+                <p id="balance">$0</p>
+            </div>
+        </section>
+
+        <!-- Form -->
+        <form id="transactionForm">
+            <input id="title" placeholder="Title" required />
+            <input id="amount" type="number" placeholder="Amount" required />
+
+            <select id="category">
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Bills</option>
+                <option>Other</option>
+            </select>
+
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+
+            <button>Add</button>
+        </form>
+
+        <!-- Empty State -->
+        <p id="emptyState" class="hidden">
+            No transactions yet — future rich you will thank you 💸
+        </p>
+
+        <!-- Transactions -->
+        <ul id="list"></ul>
+
+        <!-- Chart -->
+        <canvas id="chart"></canvas>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
